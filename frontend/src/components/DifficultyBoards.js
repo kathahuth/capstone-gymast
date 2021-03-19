@@ -1,24 +1,22 @@
 import styled from "styled-components/macro";
+import BoardItem from "./BoardItem";
 
-export default function DifficultyBoards() {
+export default function DifficultyBoards({difficulties}) {
     return (
-    <Boards>
-        <section>
-            <h2>Grid-Box1</h2>
-        </section>
-        <section>
-            <h2>Grid-Box2</h2>
-        </section>
-        <section>
-            <h2>Grid-Box3</h2>
-        </section>
-    </Boards>
+    <Board>
+        {difficulties.map((difficulties) => (
+            <BoardItem
+                key={difficulties.id}
+                difficulties={difficulties}
+                />
+        ))}
+    </Board>
     )
 }
 
-const Boards = styled.main`
+const Board = styled.main`
 
-  background: #f0f8ff;
+  background: var(--primary-color);
   overflow-y: scroll;
   padding: 0 25px;
   display: grid;
