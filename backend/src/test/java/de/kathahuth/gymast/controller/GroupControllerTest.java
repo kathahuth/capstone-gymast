@@ -29,19 +29,33 @@ class GroupControllerTest {
     private TestRestTemplate testRestTemplate;
 
     @Autowired
-    private GroupMongoDb groupDb;
+    private GroupMongoDb groupMongoDb;
 
     @BeforeEach
     public void setup() {
-        groupDb.deleteAll();
+        groupMongoDb.deleteAll();
+    }
+
+    private Group createDynamicGroup() {
+        return Group.builder()
+                .id("dynamic-strength")
+                .name("Dynamic Strength")
+                .build();
+    }
+
+    private Group createJumpGroup() {
+        return Group.builder()
+                .id("jump-and-leaps")
+                .name("Jump & Leaps")
+                .build();
     }
 
     @Test
     @DisplayName("Get group should return a list of all difficulty groups")
     public void getAllGroups() {
         //Given
-        groupDb.save(new Group("difficultygroup1"));
-        groupDb.save(new Group("difficultygroup2"));
+        groupMongoDb.save(createDynamicGroup());
+        groupMongoDb.save(createJumpGroup());
 
         //When
         HttpHeaders headers = new HttpHeaders();
@@ -51,9 +65,34 @@ class GroupControllerTest {
 
         //Then
         assertThat(response.getStatusCode(), is(HttpStatus.OK));
-        assertThat(response.getBody(), arrayContainingInAnyOrder(
-                new Group("difficultygroup1"),
-                new Group("difficultygroup2")));
+        assertThat(response.getBody(), arrayContainingInAnyOrder(createDynamicGroup(), createJumpGroup()));
+    }
 
+    @Test
+    @DisplayName("Get Group By Id should return GroupId")
+    public void getGroupById(){
+        //Given
+        String groupId = "dynamic-strength";
+        groupMongoDb.save(createDynamicGroup());
+
+        //When
+        ResponseEntity<Group> response = testRestTemplate.getForEntity(getUrl() + "/" + groupId, Group.class);
+
+        //Then
+        assertThat(response.getStatusCode(), is(HttpStatus.OK));
+        assertThat(response.getBody(), is(createDynamicGroup()));
+    }
+
+    @Test
+    @DisplayName("Get non existing Group Difficulty Id should return not found")
+    public void getNonExistingGroupByIdReturnsNotFound(){
+        //Given
+        String groupId = "123456";
+
+        //When
+        ResponseEntity<Void> response = testRestTemplate.getForEntity(getUrl() + "/" + groupId, Void.class);
+
+        //Then
+        assertThat(response.getStatusCode(), is(HttpStatus.NOT_FOUND));
     }
 }
