@@ -5,7 +5,7 @@ export default function DifficultyBoards({difficulties}) {
     return (
     <List>
         {difficulties.map((difficulty) => (
-            <li key={difficulty.id}>
+            <li key={difficulty.name}>
             <BoardItem difficulty={difficulty}/>
             </li>
         ))}

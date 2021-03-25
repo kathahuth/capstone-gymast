@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 export default function BoardItem({difficulty}){
     return (
     <BoardItemWrapper>
-        <p>{difficulty.id}</p>
+        <p>{difficulty.name}</p>
     </BoardItemWrapper>
     )
 }
