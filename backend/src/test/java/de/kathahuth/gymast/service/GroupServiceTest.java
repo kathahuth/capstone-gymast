@@ -21,15 +21,15 @@ class GroupServiceTest {
 
     private Group createDynamicGroup() {
         return Group.builder()
-                .id("Dynamic Strength")
-                .lable("difficulty")
+                .id("dynamic-strength")
+                .name("Dynamic Strength")
                 .build();
     }
 
     private Group createJumpGroup() {
         return Group.builder()
-                .id("Jump and Leaps")
-                .lable("difficulty")
+                .id("jump-and-leaps")
+                .name("Jump & Leaps")
                 .build();
     }
 
@@ -56,8 +56,8 @@ class GroupServiceTest {
     public void getGroupById(){
 
         //Given
-        String groupId = "Dynamic Strength";
-        when(mockGroupMongoDb.findById("Dynamic Strength")).thenReturn(
+        String groupId = "dynamic-strength";
+        when(mockGroupMongoDb.findById("dynamic-strength")).thenReturn(
                 Optional.of(createDynamicGroup())
         );
 
@@ -73,8 +73,8 @@ class GroupServiceTest {
     public void getGroupByIdShouldReturnEmptyOptional(){
 
         //Given
-        String groupId = "Dynamic Strength";
-        when(mockGroupMongoDb.findById("Dynamic Strength")).thenReturn(
+        String groupId = "dynamic-strength";
+        when(mockGroupMongoDb.findById("dynamic-strength")).thenReturn(
                 Optional.empty()
         );
 
