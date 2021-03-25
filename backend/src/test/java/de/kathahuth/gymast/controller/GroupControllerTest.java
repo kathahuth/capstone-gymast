@@ -38,15 +38,15 @@ class GroupControllerTest {
 
     private Group createDynamicGroup() {
         return Group.builder()
-                .id("Dynamic Strength")
-                .lable("difficulty")
+                .id("dynamic-strength")
+                .name("Dynamic Strength")
                 .build();
     }
 
     private Group createJumpGroup() {
         return Group.builder()
-                .id("Jump and Leaps")
-                .lable("difficulty")
+                .id("jump-and-leaps")
+                .name("Jump & Leaps")
                 .build();
     }
 
@@ -72,7 +72,7 @@ class GroupControllerTest {
     @DisplayName("Get Group By Id should return GroupId")
     public void getGroupById(){
         //Given
-        String groupId = "Dynamic Strength";
+        String groupId = "dynamic-strength";
         groupMongoDb.save(createDynamicGroup());
 
         //When
