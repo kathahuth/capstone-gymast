@@ -16,6 +16,6 @@ public class Group {
 
     @Id
     private String id;
-    private String lable;
+    private String name;
 
 }
