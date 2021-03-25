@@ -13,9 +13,7 @@ export default function GroupPage(){
     }, [])
 
     return (
-        <>
             <DifficultyBoards difficulties={difficulties} />
-        </>
     )
 }
 
