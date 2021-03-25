@@ -1,18 +1,21 @@
 import {useEffect, useState} from "react";
 import {getDifficultyGroups} from "../services/MongoDbApiService";
+import DifficultyBoards from "../components/DifficultyBoards";
 
 export default function GroupPage(){
 
-    const [groupDifficulty, setGroupDifficulty] = useState([])
+    const [difficulties, setDifficulties] = useState([])
 
     useEffect(() => {
-        getDifficultyGroups().then(setGroupDifficulty)
+        getDifficultyGroups()
+            .then(setDifficulties)
+            .catch((error) => console.error(error))
     }, [])
 
-    /*return (
+    return (
         <>
-            {groupDifficulty}
+            <DifficultyBoards difficulties={difficulties} />
         </>
-    )*/
+    )
 }
 

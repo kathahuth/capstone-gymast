@@ -1,14 +1,14 @@
 import styled from "styled-components/macro";
 
-export default function BoardItem({difficulties}){
+export default function BoardItem({difficulty}){
     return (
-    <BoardItemBox>
-        {difficulties.id}
-    </BoardItemBox>
+    <BoardItemWrapper>
+        <p>{difficulty.id}</p>
+    </BoardItemWrapper>
     )
 }
 
-const BoardItemBox = styled.section`
+const BoardItemWrapper = styled.div`
   border: 1px solid var(--secondary-color);
   border-radius: 10px;
   box-shadow: 0 0 8px 3px #2f3235;

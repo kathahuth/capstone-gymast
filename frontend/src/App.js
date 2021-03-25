@@ -15,11 +15,11 @@ export default function App() {
               <Route exact path="/">
                   <p> This is the start page</p>
               </Route>
-              <Route exact path="/difficulty">
+              <Route path="/difficulty">
                   <GroupPage/>
               </Route >
-            <NavigationBar />
             </Switch>
+                <NavigationBar />
             </PageLayout>
         </Router>
   )
