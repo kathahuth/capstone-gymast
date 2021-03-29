@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 @RestController
-@RequestMapping("api/difficulty")
+@RequestMapping("api/family")
 public class FamilyController {
 
     private final FamilyService familyService;
@@ -21,8 +21,8 @@ public class FamilyController {
         this.familyService = familyService;
     }
 
-    @GetMapping("{groupId}/{familyId}")
-    public Family getFamilyById(@PathVariable String groupId, @PathVariable String familyId) {
+    @GetMapping("{familyId}")
+    public Family getFamilyById(@PathVariable String familyId) {
         return familyService.getFamilyById(familyId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Family Difficulty could not be found"));
     }

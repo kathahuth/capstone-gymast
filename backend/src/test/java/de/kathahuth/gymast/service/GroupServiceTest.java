@@ -5,15 +5,13 @@ import de.kathahuth.gymast.model.Group;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 class GroupServiceTest {
 
@@ -24,7 +22,7 @@ class GroupServiceTest {
         return Group.builder()
                 .id("dynamic-strength")
                 .name("Dynamic Strength")
-                .childrenNames(Arrays.asList("Push Up Family"))
+                .familyNames(List.of("Push Up Family"))
                 .build();
     }
 
@@ -32,7 +30,7 @@ class GroupServiceTest {
         return Group.builder()
                 .id("jump-and-leaps")
                 .name("Jump & Leaps")
-                .childrenNames(Arrays.asList("Straight Jump Family"))
+                .familyNames(List.of("Straight Jump Family"))
                 .build();
     }
 
@@ -60,7 +58,7 @@ class GroupServiceTest {
 
         //Given
         String groupId = "dynamic-strength";
-        when(mockGroupMongoDb.findById("dynamic-strength")).thenReturn(
+        when(mockGroupMongoDb.findById(groupId)).thenReturn(
                 Optional.of(createDynamicGroup())
         );
 
@@ -69,6 +67,7 @@ class GroupServiceTest {
 
         //Then
         assertThat(result.get(), is(createDynamicGroup()));
+        verify(mockGroupMongoDb).findById(groupId);
     }
 
     @Test
@@ -77,7 +76,7 @@ class GroupServiceTest {
 
         //Given
         String groupId = "dynamic-strength";
-        when(mockGroupMongoDb.findById("dynamic-strength")).thenReturn(
+        when(mockGroupMongoDb.findById(groupId)).thenReturn(
                 Optional.empty()
         );
 

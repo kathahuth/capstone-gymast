@@ -11,7 +11,7 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.*;
 
-import java.util.Arrays;
+import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -23,7 +23,7 @@ class FamilyControllerTest {
     private int port;
 
     private String getUrl() {
-        return "http://localhost:" + port + "api/difficulty/groupId";
+        return "http://localhost:" + port + "api/family";
     }
 
     @Autowired
@@ -40,13 +40,13 @@ class FamilyControllerTest {
         return Family.builder()
                 .id("push-up-family")
                 .name("Push Up Family")
-                .childrenNames(Arrays.asList("Push Up Category"))
+                .categoryNames(List.of("Push Up Category"))
                 .build();
     }
 
     @Test
     @DisplayName("Get Family By Id should return FamilyId")
-    public void getFamilyById(){
+    public void getFamilyByIdShouldReturnFamilyId(){
         //Given
         String familyId = "push-up-family";
         familyMongoDb.save(createPushUpFamily());

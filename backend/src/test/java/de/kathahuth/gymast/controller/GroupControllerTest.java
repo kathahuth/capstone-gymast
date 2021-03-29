@@ -12,6 +12,7 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.*;
 
 import java.util.Arrays;
+import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.arrayContainingInAnyOrder;
@@ -42,7 +43,7 @@ class GroupControllerTest {
         return Group.builder()
                 .id("dynamic-strength")
                 .name("Dynamic Strength")
-                .childrenNames(Arrays.asList("Push Up Family"))
+                .familyNames(List.of("Push Up Family"))
                 .build();
     }
 
@@ -50,7 +51,7 @@ class GroupControllerTest {
         return Group.builder()
                 .id("jump-and-leaps")
                 .name("Jump & Leaps")
-                .childrenNames(Arrays.asList("Straight Jump Family"))
+                .familyNames(List.of("Straight Jump Family"))
                 .build();
     }
 
@@ -74,7 +75,7 @@ class GroupControllerTest {
 
     @Test
     @DisplayName("Get Group By Id should return GroupId")
-    public void getGroupById(){
+    public void getGroupByIdShouldReturnGroupId(){
         //Given
         String groupId = "dynamic-strength";
         groupMongoDb.save(createDynamicGroup());

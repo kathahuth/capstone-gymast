@@ -5,7 +5,6 @@ import de.kathahuth.gymast.model.Family;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,8 +12,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 class FamilyServiceTest {
 
@@ -25,7 +23,7 @@ class FamilyServiceTest {
         return Family.builder()
                 .id("push-up-family")
                 .name("Push Up Family")
-                .childrenNames(Arrays.asList("Push Up Category"))
+                .categoryNames(List.of("Push Up Category"))
                 .build();
     }
 
@@ -33,7 +31,7 @@ class FamilyServiceTest {
         return Family.builder()
                 .id("explosive-push-up-family")
                 .name("Explosive Push Up Family")
-                .childrenNames(Arrays.asList("Test Category"))
+                .categoryNames(List.of("Test Category"))
                 .build();
     }
 
@@ -61,7 +59,7 @@ class FamilyServiceTest {
 
         //Given
         String familyId = "push-up-family";
-        when(mockFamilyMongoDb.findById("push-up-family")).thenReturn(
+        when(mockFamilyMongoDb.findById(familyId)).thenReturn(
                 Optional.of(createPushUpFamily())
         );
 
@@ -70,6 +68,7 @@ class FamilyServiceTest {
 
         //Then
         assertThat(result.get(), is(createPushUpFamily()));
+        verify(mockFamilyMongoDb).findById(familyId);
     }
 
     @Test
@@ -79,7 +78,7 @@ class FamilyServiceTest {
         //Given
         String familyId = "push-up-family";
 
-        when(mockFamilyMongoDb.findById("push-up-family")).thenReturn(
+        when(mockFamilyMongoDb.findById(familyId)).thenReturn(
                 Optional.empty()
         );
 
