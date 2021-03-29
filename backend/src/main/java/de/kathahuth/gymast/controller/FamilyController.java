@@ -10,10 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.List;
-
 @RestController
-@RequestMapping("api/difficulty/groupId")
+@RequestMapping("api/difficulty")
 public class FamilyController {
 
     private final FamilyService familyService;
@@ -23,13 +21,8 @@ public class FamilyController {
         this.familyService = familyService;
     }
 
-    @GetMapping
-    public List<Family> listFamilies(){
-        return familyService.listFamilies();
-    }
-
-    @GetMapping("{familyId}")
-    public Family getFamilyById(@PathVariable String familyId) {
+    @GetMapping("{groupId}/{familyId}")
+    public Family getFamilyById(@PathVariable String groupId, @PathVariable String familyId) {
         return familyService.getFamilyById(familyId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Family Difficulty could not be found"));
     }

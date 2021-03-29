@@ -28,7 +28,7 @@ public class GroupController {
         return groupService.listGroups();
     }
 
-    @GetMapping("{groupId}")
+   @GetMapping("{groupId}")
     public Group getGroupById(@PathVariable String groupId) {
         return groupService.getGroupById(groupId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Group Difficulty could not be found"));

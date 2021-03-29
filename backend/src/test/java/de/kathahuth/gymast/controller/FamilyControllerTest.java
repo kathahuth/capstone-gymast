@@ -11,8 +11,9 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.*;
 
+import java.util.Arrays;
+
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.arrayContainingInAnyOrder;
 import static org.hamcrest.Matchers.is;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -39,31 +40,8 @@ class FamilyControllerTest {
         return Family.builder()
                 .id("push-up-family")
                 .name("Push Up Family")
+                .childrenIds(Arrays.asList("push-up-category"))
                 .build();
-    }
-
-    private Family createExplosivePushUpFamily() {
-        return Family.builder()
-                .id("explosive-push-up-family")
-                .name("Explosive Push Up Family")
-                .build();
-    }
-
-    @Test
-    @DisplayName("Get family should return a list of all difficulty families")
-    public void getAllFamilies(){
-        //Given
-        familyMongoDb.save(createPushUpFamily());
-        familyMongoDb.save(createExplosivePushUpFamily());
-
-        //When
-        HttpHeaders headers = new HttpHeaders();
-        HttpEntity<Void> entity = new HttpEntity<>(headers);
-        ResponseEntity<Family[]> response = testRestTemplate.exchange(getUrl(), HttpMethod.GET, entity, Family[].class);
-
-        //Then
-        assertThat(response.getStatusCode(), is(HttpStatus.OK));
-        assertThat(response.getBody(), arrayContainingInAnyOrder(createPushUpFamily(), createExplosivePushUpFamily()));
     }
 
     @Test

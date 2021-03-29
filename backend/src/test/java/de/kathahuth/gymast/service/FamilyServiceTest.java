@@ -5,6 +5,7 @@ import de.kathahuth.gymast.model.Family;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,6 +25,7 @@ class FamilyServiceTest {
         return Family.builder()
                 .id("push-up-family")
                 .name("Push Up Family")
+                .childrenIds(Arrays.asList("push-up-category"))
                 .build();
     }
 
@@ -31,6 +33,7 @@ class FamilyServiceTest {
         return Family.builder()
                 .id("explosive-push-up-family")
                 .name("Explosive Push Up Family")
+                .childrenIds(Arrays.asList("test-category"))
                 .build();
     }
 

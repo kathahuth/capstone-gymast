@@ -5,6 +5,7 @@ import de.kathahuth.gymast.model.Group;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,6 +24,7 @@ class GroupServiceTest {
         return Group.builder()
                 .id("dynamic-strength")
                 .name("Dynamic Strength")
+                .childrenIds(Arrays.asList("push-up-family"))
                 .build();
     }
 
@@ -30,6 +32,7 @@ class GroupServiceTest {
         return Group.builder()
                 .id("jump-and-leaps")
                 .name("Jump & Leaps")
+                .childrenIds(Arrays.asList("straight-jump-family"))
                 .build();
     }
 
