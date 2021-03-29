@@ -40,7 +40,7 @@ class FamilyControllerTest {
         return Family.builder()
                 .id("push-up-family")
                 .name("Push Up Family")
-                .childrenIds(Arrays.asList("push-up-category"))
+                .childrenNames(Arrays.asList("Push Up Category"))
                 .build();
     }
 

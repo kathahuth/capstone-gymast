@@ -25,7 +25,7 @@ class FamilyServiceTest {
         return Family.builder()
                 .id("push-up-family")
                 .name("Push Up Family")
-                .childrenIds(Arrays.asList("push-up-category"))
+                .childrenNames(Arrays.asList("Push Up Category"))
                 .build();
     }
 
@@ -33,7 +33,7 @@ class FamilyServiceTest {
         return Family.builder()
                 .id("explosive-push-up-family")
                 .name("Explosive Push Up Family")
-                .childrenIds(Arrays.asList("test-category"))
+                .childrenNames(Arrays.asList("Test Category"))
                 .build();
     }
 

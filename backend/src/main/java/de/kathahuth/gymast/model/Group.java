@@ -19,6 +19,6 @@ public class Group {
     @Id
     private String id;
     private String name;
-    private List<String> childrenIds;
+    private List<String> childrenNames;
 
 }

@@ -24,7 +24,7 @@ class GroupServiceTest {
         return Group.builder()
                 .id("dynamic-strength")
                 .name("Dynamic Strength")
-                .childrenIds(Arrays.asList("push-up-family"))
+                .childrenNames(Arrays.asList("Push Up Family"))
                 .build();
     }
 
@@ -32,7 +32,7 @@ class GroupServiceTest {
         return Group.builder()
                 .id("jump-and-leaps")
                 .name("Jump & Leaps")
-                .childrenIds(Arrays.asList("straight-jump-family"))
+                .childrenNames(Arrays.asList("Straight Jump Family"))
                 .build();
     }
 
