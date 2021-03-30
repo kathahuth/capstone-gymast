@@ -34,7 +34,8 @@ class FamilyControllerTest {
 
     @BeforeEach
     public void setup() {
-        familyMongoDb.deleteAll();}
+        familyMongoDb.deleteAll();
+    }
 
     private Family createPushUpFamily() {
         return Family.builder()

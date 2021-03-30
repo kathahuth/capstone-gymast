@@ -31,7 +31,7 @@ class FamilyServiceTest {
         return Family.builder()
                 .id("explosive-push-up-family")
                 .name("Explosive Push Up Family")
-                .categoryNames(List.of("Test Category"))
+                .categoryNames(List.of("A-Frame Category"))
                 .build();
     }
 
@@ -60,8 +60,7 @@ class FamilyServiceTest {
         //Given
         String familyId = "push-up-family";
         when(mockFamilyMongoDb.findById(familyId)).thenReturn(
-                Optional.of(createPushUpFamily())
-        );
+                Optional.of(createPushUpFamily()));
 
         //When
         Optional<Family> result = familyService.getFamilyById(familyId);

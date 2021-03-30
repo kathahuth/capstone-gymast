@@ -1,6 +1,5 @@
 package de.kathahuth.gymast.model;
 
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,13 +14,14 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Document(collection = "families")
-public class Family {
+@Document(collection = "categories")
+public class Category {
 
     @Id
     private String id;
     private String name;
 
-    @JsonProperty("childrenNames")
+    @JsonProperty ("childrenNames")
     private List<String> categoryNames;
+
 }
