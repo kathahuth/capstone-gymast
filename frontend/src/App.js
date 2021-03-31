@@ -4,6 +4,8 @@ import NavigationBar from "./components/NavigationBar";
 import PageLayout from "./components/PageLayout";
 import {Switch, Route, BrowserRouter as Router} from "react-router-dom";
 import FamilyPage from "./pages/FamilyPage";
+import CategoryPage from "./pages/CategoryPage";
+import ListOfDifficultyItemPage from "./pages/ListOfDifficultyItemPage";
 
 
 export default function App() {
@@ -19,6 +21,12 @@ export default function App() {
               <Route exact path="/difficulty">
                   <GroupPage/>
               </Route >
+                <Route path="/difficulty/:groupId/:familyId/:categoryId">
+                    <ListOfDifficultyItemPage/>
+                </Route>
+                <Route path="/difficulty/:groupId/:familyId">
+                    <CategoryPage/>
+                </Route>
                 <Route path="/difficulty/:groupId">
                    <FamilyPage/>
                 </Route>
