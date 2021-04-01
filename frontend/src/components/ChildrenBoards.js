@@ -1,5 +1,6 @@
 import ChildItem from "./ChildItem";
 import ListStyled from "../form/ListStyled";
+import ArrowRight from "../icon/ArrowRight";
 
 export default function ChildrenBoards({childrenNames}) {
 
@@ -8,6 +9,7 @@ export default function ChildrenBoards({childrenNames}) {
             {childrenNames.map((name) => (
                 <li key={name}>
                     <ChildItem name={name}/>
+                    <ArrowRight/>
                 </li>
             ))}
         </ListStyled>
