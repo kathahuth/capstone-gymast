@@ -15,8 +15,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Document(collection = "groups")
-public class Group {
+@Document(collection = "categories")
+public class Category {
 
     @Id
     private String id;
@@ -24,6 +24,6 @@ public class Group {
 
     @Field("childrenNames")
     @JsonProperty("childrenNames")
-    private List<String> familyNames;
+    private List<String> categoryNames;
 
 }

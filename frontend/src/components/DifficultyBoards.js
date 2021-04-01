@@ -1,26 +1,14 @@
-import styled from "styled-components/macro";
 import BoardItem from "./BoardItem";
+import ListStyled from "../form/ListStyled";
 
 export default function DifficultyBoards({difficulties}) {
     return (
-    <List>
-        {difficulties.map((difficulty) => (
-            <li key={difficulty.name}>
-            <BoardItem difficulty={difficulty}/>
-            </li>
-        ))}
-    </List>
+        <ListStyled>
+            {difficulties.map((difficulty) => (
+                <li key={difficulty.name}>
+                    <BoardItem difficulty={difficulty}/>
+                </li>
+            ))}
+        </ListStyled>
     )
 }
-
-const List = styled.ul`
-
-  background: var(--primary-color);
-  overflow-y: scroll;
-  padding: 0 25px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  grid-gap: 20px;
-  list-style: none;
-  margin: 0px;
-`
