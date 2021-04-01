@@ -1,22 +1,12 @@
-import styled from "styled-components/macro";
+import {useLocation} from "react-router";
+import LinkStyled from "../form/LinkStyled";
 
 export default function ChildItem({name}){
+
+    const location = useLocation();
+    const slug = name.toLowerCase().replaceAll(" ", "-");
+
     return (
-        <BoardItemWrapper>
-            <p>{name}</p>
-        </BoardItemWrapper>
+            <LinkStyled to={`${location.pathname}/${slug}`}>{name}</LinkStyled>
     )
 }
-
-const BoardItemWrapper = styled.div`
-  border: 1px solid var(--secondary-color);
-  border-radius: 10px;
-  box-shadow: 0 0 8px 3px #2f3235;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: var(--secondary-color);
-`

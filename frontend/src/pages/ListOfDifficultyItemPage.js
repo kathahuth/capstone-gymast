@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import {useParams} from "react-router";
 import {getCategoriesById, getFamiliesById, getGroupsById} from "../services/MongoDbApiService";
 import ChildrenBoards from "../components/ChildrenBoards";
+import PageNameDifficultyItem from "../components/PageNameDifficultyItem";
 
 export default function ListOfDifficultyItemPage() {
 
@@ -16,6 +17,9 @@ export default function ListOfDifficultyItemPage() {
     }, [groupId, familyId, categoryId])
 
     return (
-        <ChildrenBoards childrenNames={childrenNames} />
+        <>
+            <PageNameDifficultyItem/>
+            <ChildrenBoards childrenNames={childrenNames} />
+        </>
     )
 }

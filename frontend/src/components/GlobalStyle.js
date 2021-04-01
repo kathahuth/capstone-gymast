@@ -8,11 +8,13 @@ export default createGlobalStyle`
   html, body{
   margin: 0;
   font-family: Futura;
-  color: #fafafa;  
+ 
   }
   
   :root{
     --primary-color: #1f1f1f;
     --secondary-color: #43474c;
+    --color-white: #fafafa;
+    color: var(--color-white);
   }
 `

@@ -2,6 +2,7 @@ import {getGroupsById} from "../services/MongoDbApiService";
 import {useEffect, useState} from "react";
 import {useParams} from "react-router";
 import ChildrenBoards from "../components/ChildrenBoards";
+import PageNameFamily from "../components/PageNameFamily";
 
 export default function FamilyPage(){
 
@@ -15,6 +16,10 @@ export default function FamilyPage(){
     }, [groupId])
 
     return (
-        <ChildrenBoards childrenNames={childrenNames} />
+
+        <>
+            <PageNameFamily/>
+            <ChildrenBoards childrenNames={childrenNames} />
+        </>
     )
 }
