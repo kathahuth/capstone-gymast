@@ -15,5 +15,4 @@ const Arrow = styled(FiChevronRight)`
   
   color: #00bfff;
   transform: scale(1.5);
-  
 `
