@@ -6,6 +6,7 @@ import {Switch, Route, BrowserRouter as Router} from "react-router-dom";
 import FamilyPage from "./pages/FamilyPage";
 import CategoryPage from "./pages/CategoryPage";
 import ListOfDifficultyItemPage from "./pages/ListOfDifficultyItemPage";
+import GymnastPage from "./pages/GymnastPage";
 
 
 export default function App() {
@@ -17,6 +18,9 @@ export default function App() {
             <Switch>
               <Route exact path="/">
                   <p> This is the start page</p>
+              </Route>
+              <Route exact path="/gymnast/:username">
+                  <GymnastPage/>
               </Route>
               <Route exact path="/difficulty">
                   <GroupPage/>
