@@ -36,6 +36,6 @@ export default function GymnastPage(){
 const UserDetailsContainer = styled.section`
 
     background: var(--primary-color);
-    padding: 0 25px;
+    padding: 15px 25px;
 `
 
