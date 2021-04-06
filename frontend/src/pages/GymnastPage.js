@@ -27,7 +27,6 @@ export default function GymnastPage(){
 
         <>
             <UserDetailsContainer>
-                <p>Test</p>
                 <span className="user-name">{userData.gymnastname}</span>
             </UserDetailsContainer>
         </>
@@ -36,11 +35,7 @@ export default function GymnastPage(){
 
 const UserDetailsContainer = styled.section`
 
-display: flex;
-flex-direction: row;
-align-items: left;
-
-.user-name {
-margin-left: 16px;
+    background: var(--primary-color);
+    padding: 0 25px;
 `
 
