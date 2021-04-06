@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 export default function AppHeader(){
     return (
     <Header>
-        <img src="./images/GymastLogoSmall.png" alt="gymast logo" />
+        <img src="/GymastLogoSmall.png" alt="gymast logo" />
     </Header>
     )
 }
@@ -19,4 +19,5 @@ const Header = styled.header`
   img {
   margin: 8px 0px;
   margin-bottem: 8px;
+  }
 `

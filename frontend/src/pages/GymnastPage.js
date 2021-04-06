@@ -7,10 +7,13 @@ export default function GymnastPage(){
 
     const { username } = useParams()
     const [userData, setUserData] = useState()
+    const [dataIsLoaded, setDataIsLoaded] = useState(false)
 
     useEffect(() => {
+    if (!dataIsLoaded) {
     getUserByUserName(username).then((response) => {setUserData(response)})
-    }, [])
+        setDataIsLoaded(true)
+    }}, )
 
     if (!userData) {
         return (
@@ -33,4 +36,8 @@ const UserDetailsContainer = styled.section`
 
     background: var(--primary-color);
     padding: 15px 25px;
+    
+    .user-name {
+    color: #00bfff;
+    }
 `
