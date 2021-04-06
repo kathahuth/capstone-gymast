@@ -22,7 +22,7 @@ class UserControllerTest {
     private int port;
 
     private String getUrl() {
-        return "http://localhost:" + port + "api/user";
+        return "http://localhost:" + port + "api/gymnast";
     }
 
     @Autowired

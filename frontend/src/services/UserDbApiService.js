@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const userUrl = '/api/gymnast'
+const gymnastUrl = '/api/gymnast'
 
 export const getUserByUserName = (username) =>
-    axios.get(`${userUrl}/${username}`).then(response => response.data)
+    axios.get(`${gymnastUrl}/${username}`).then(response => response.data)
