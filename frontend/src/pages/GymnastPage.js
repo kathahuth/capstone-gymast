@@ -1,16 +1,16 @@
-import {useState, useEffect} from "react";
+import {useEffect, useState} from "react";
 import {useParams} from "react-router";
 import {getUserByUserName} from "../services/UserDbApiService";
 import styled from "styled-components/macro";
 
-export default function GymnastPage() {
+export default function GymnastPage(){
 
     const { username } = useParams()
     const [userData, setUserData] = useState()
 
     useEffect(() => {
-        getUserByUserName(username).then(setUserData)
-    }, [username])
+    getUserByUserName(username).then((response) => {setUserData(response)})
+    }, [])
 
     if (!userData) {
         return (
@@ -21,20 +21,16 @@ export default function GymnastPage() {
     }
 
     return (
-
-        <UserDetailsContainer>
-            <span className="user-name">{userData.username}</span>
-        </UserDetailsContainer>
+        <>
+            <UserDetailsContainer>
+                <span className="user-name">{userData.gymnastname}</span>
+            </UserDetailsContainer>
+        </>
     )
 }
 
 const UserDetailsContainer = styled.section`
-    display: flex;
-    flex-direction: row;
-    align-items: left;
-    
-    .user-name {
-      margin-left: 16px;
-    }
-    
+
+    background: var(--primary-color);
+    padding: 15px 25px;
 `
