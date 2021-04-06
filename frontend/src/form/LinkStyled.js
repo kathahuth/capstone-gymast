@@ -7,6 +7,6 @@ const LinkStyled = styled(Link)`
   border: 0;
   text-decoration: none;
   color: var(--color-white);
-`;
+`
 
 export default LinkStyled;
