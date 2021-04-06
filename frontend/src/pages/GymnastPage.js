@@ -12,7 +12,7 @@ export default function GymnastPage(){
     useEffect(() => {
     if (!dataIsLoaded) {
     getUserByUserName(username).then((response) => {setUserData(response)})
-        setDataIsLoaded(true"")
+        setDataIsLoaded(true)
     }}, )
 
     if (!userData) {
