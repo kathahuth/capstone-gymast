@@ -14,8 +14,11 @@ const ListStyled = styled.ul`
     box-shadow: 0 0 8px 3px #2f3235;
     padding: 20px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
     background: var(--secondary-color);
     &:hover{
       opacity: 0.5;
@@ -24,6 +27,7 @@ const ListStyled = styled.ul`
     +li{
       margin: 10px 0;
     }
+    
   }
 `;
 

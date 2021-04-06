@@ -9,10 +9,7 @@ export default function GymnastPage(){
     const [userData, setUserData] = useState()
 
     useEffect(() => {
-        console.log(username)
-        getUserByUserName(username).then((response) => {
-            setUserData(response)}
-        )
+    getUserByUserName(username).then((response) => {setUserData(response)})
     }, [])
 
     if (!userData) {
@@ -24,7 +21,6 @@ export default function GymnastPage(){
     }
 
     return (
-
         <>
             <UserDetailsContainer>
                 <span className="user-name">{userData.gymnastname}</span>
@@ -38,4 +34,3 @@ const UserDetailsContainer = styled.section`
     background: var(--primary-color);
     padding: 15px 25px;
 `
-
