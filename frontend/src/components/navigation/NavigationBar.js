@@ -1,12 +1,12 @@
 import styled from "styled-components/macro";
-import TableIcon from "../icon/Table";
-import AccountIcon from "../icon/Account";
+import LinkTable from "./LinkTable";
+import LinkAccount from "./LinkAccount";
 
 export default function NavigationBar() {
     return (
         <Wrapper>
-            <TableIcon/>
-            <AccountIcon/>
+            <LinkTable/>
+            <LinkAccount/>
         </Wrapper>
     )
 }

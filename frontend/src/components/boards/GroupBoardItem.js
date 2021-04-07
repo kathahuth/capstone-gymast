@@ -1,8 +1,8 @@
 import {useLocation} from "react-router";
-import LinkStyled from "../form/LinkStyled";
+import LinkStyled from "../../form/LinkStyled";
 
 
-export default function BoardItem({difficulty}){
+export default function GroupBoardItem({difficulty}){
 
     const location = useLocation();
 

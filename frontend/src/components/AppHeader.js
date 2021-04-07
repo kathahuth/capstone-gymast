@@ -1,10 +1,11 @@
 import styled from "styled-components/macro";
 
 export default function AppHeader(){
+
     return (
-    <Header>
-        <img src="/GymastLogoSmall.png" alt="gymast logo" />
-    </Header>
+        <Header>
+            <img src="/GymastLogoSmall.png" alt="gymast logo" />
+        </Header>
     )
 }
 

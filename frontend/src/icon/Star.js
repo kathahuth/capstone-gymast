@@ -1,18 +1,18 @@
-import { AiFillStar } from "react-icons/ai";
+import { AiOutlineStar } from "react-icons/ai";
 import styled from "styled-components/macro";
 
 export default function StarIcon() {
     return(
 
         <Star>
-            <AiFillStar/>
+            <AiOutlineStar/>
         </Star>
     )
 
 }
 
-const Star = styled(AiFillStar)`
+const Star = styled(AiOutlineStar)`
 
   color: #00bfff;
-  transform: scale(1.5);
+  transform: scale(2.3);
 `

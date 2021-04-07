@@ -1,6 +1,6 @@
 import ChildItem from "./ChildItem";
-import ListStyled from "../form/ListStyled";
-import ArrowRight from "../icon/ArrowRight";
+import ListStyled from "../../form/ListStyled";
+import ArrowRight from "../../icon/ArrowRight";
 
 export default function ChildrenBoards({childrenNames}) {
 

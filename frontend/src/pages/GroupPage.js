@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {getDifficultyGroups} from "../services/MongoDbApiService";
-import DifficultyBoards from "../components/DifficultyBoards";
-import PageNameGroup from "../components/PageNameGroup";
+import GroupBoards from "../components/boards/GroupBoards";
+import PageNameGroup from "../components/difficultyheader/PageNameGroup";
 
 export default function GroupPage(){
 
@@ -17,7 +17,7 @@ export default function GroupPage(){
 
         <>
             <PageNameGroup/>
-            <DifficultyBoards difficulties={difficulties} />
+            <GroupBoards difficulties={difficulties} />
         </>
     )
 }
