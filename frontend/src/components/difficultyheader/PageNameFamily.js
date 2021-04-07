@@ -1,10 +1,12 @@
 import styled from "styled-components/macro";
+import BackButton from "../button/BackButton";
 
-export default function PageNameGroup() {
+export default function PageNameFamily() {
 
     return (
         <PageNameWrapper>
-            <h4>Choose a difficulty group</h4>
+            <BackButton />
+            <h4>Choose a difficulty family</h4>
         </PageNameWrapper>
     )
 }
@@ -15,5 +17,6 @@ const PageNameWrapper = styled.div`
   padding: 0 25px;
   
   h4 {
-  margin: 45px 0px 20px;
+  margin: 20px 0px 20px;
+  }
 `

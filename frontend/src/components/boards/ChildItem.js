@@ -1,5 +1,5 @@
 import {useLocation} from "react-router";
-import LinkStyled from "../form/LinkStyled";
+import LinkStyled from "../../form/LinkStyled";
 
 export default function ChildItem({name}){
 

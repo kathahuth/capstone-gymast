@@ -1,13 +1,10 @@
 import styled from "styled-components/macro";
-import ArrowLeft from "../icon/ArrowLeft";
 
-export default function PageNameFamily() {
-
+export default function PageNameGroup() {
 
     return (
         <PageNameWrapper>
-            <ArrowLeft />
-            <h4>Choose a difficulty family</h4>
+            <h4>Choose a difficulty group</h4>
         </PageNameWrapper>
     )
 }
@@ -18,5 +15,5 @@ const PageNameWrapper = styled.div`
   padding: 0 25px;
   
   h4 {
-  margin: 15px 0px 20px;
+  margin: 20px 0px 20px;
 `

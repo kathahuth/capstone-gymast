@@ -1,19 +1,18 @@
 import {useEffect, useState} from "react";
 import {useParams} from "react-router";
-import {getFamiliesById, getGroupsById} from "../services/MongoDbApiService";
-import ChildrenBoards from "../components/ChildrenBoards";
-import PageNameCategory from "../components/PageNameCategory";
+import {getFamiliesById} from "../services/MongoDbApiService";
+import ChildrenBoards from "../components/boards/ChildrenBoards";
+import PageNameCategory from "../components/difficultyheader/PageNameCategory";
 
 export default function CategoryPage() {
 
     const [childrenNames, setChildrenNames] = useState([])
-    const {groupId, familyId} = useParams();
+    const {familyId} = useParams();
 
     useEffect(() => {
-        getGroupsById(groupId).then(data => setChildrenNames(data.childrenNames))
         getFamiliesById(familyId).then(data => setChildrenNames(data.childrenNames))
             .catch((error) => console.error(error))
-    }, [groupId, familyId])
+    }, [])
 
     return (
 

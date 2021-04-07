@@ -14,6 +14,6 @@ export default function ArrowLeft() {
 const Arrow = styled(FiChevronLeft)`
   
   color: var(--color-white);
-  transform: scale(1.5);
+  transform: scale(2.5);
   margin-top: 10px;
 `
