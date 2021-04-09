@@ -2,6 +2,7 @@ import ListStyled from "../../form/ListStyled";
 import DifficultyBoardItem from "./DifficultyBoardItem";
 import StarIcon from "../../icon/Star";
 import styled, {css} from "styled-components/macro";
+import StarFilled from "../../icon/StarFilled";
 
 export default function DifficultyBoards({childrenNames, onWatchlistDifficultyClick, isOnWatchlistDifficulty}) {
 
@@ -10,7 +11,7 @@ export default function DifficultyBoards({childrenNames, onWatchlistDifficultyCl
             {childrenNames.map((name) => (
                 <li key={name}>
                     <DifficultyBoardItem name={name}/>
-                    <StyledButton status={isOnWatchlistDifficulty(name)} onClick={() => onWatchlistDifficultyClick(name)} type="button"><StarIcon/></StyledButton>
+                    <StyledButton status={isOnWatchlistDifficulty(name)} onClick={() => onWatchlistDifficultyClick(name)} type="button">{isOnWatchlistDifficulty(name)?<StarFilled/>:<StarIcon/>}</StyledButton>
                 </li>
             ))}
         </ListStyled>
@@ -26,6 +27,5 @@ const StyledButton = styled.button`
     
     ${props => props.status && css`
         fill: #00bfff;
-        transform: scale(1.2);
     `}
 `
