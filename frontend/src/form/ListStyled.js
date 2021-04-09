@@ -29,7 +29,7 @@ const ListStyled = styled.ul`
     }
     
   }
-`;
+`
 
 export default ListStyled;
 

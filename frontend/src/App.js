@@ -8,6 +8,7 @@ import CategoryPage from "./pages/CategoryPage";
 import ListOfDifficultyItemPage from "./pages/ListOfDifficultyItemPage";
 import GymnastPage from "./pages/GymnastPage";
 import {useState} from "react";
+import WelcomePage from "./pages/WelcomePage";
 
 
 export default function App() {
@@ -26,30 +27,46 @@ export default function App() {
 
     return (
         <Router>
-            <PageLayout>
-            <AppHeader />
             <Switch>
-              <Route exact path="/">
-                  <p> This is the start page</p>
-              </Route>
-              <Route exact path="/gymnast/:username">
-                  <GymnastPage watchlistDifficulty={watchlistDifficulty}/>
-              </Route>
-              <Route exact path="/difficulty">
-                  <GroupPage/>
-              </Route >
-                <Route exact path="/difficulty/:groupId/:familyId/:categoryId">
-                    <ListOfDifficultyItemPage onWatchlistDifficultyClick={onWatchlistDifficultyClick} isOnWatchlistDifficulty={isOnWatchlistDifficulty}/>
+                <Route exact path="/welcome">
+                    <WelcomePage/>
                 </Route>
-                <Route exact path="/difficulty/:groupId/:familyId">
-                    <CategoryPage/>
+                <Route exact path="/gymnast/:username">
+                    <PageLayout>
+                        <AppHeader/>
+                        <GymnastPage watchlistDifficulty={watchlistDifficulty}/>
+                        <NavigationBar/>
+                    </PageLayout>
                 </Route>
-                <Route exact path="/difficulty/:groupId">
-                   <FamilyPage/>
+                <Route exact path="/difficulty">
+                    <PageLayout>
+                        <AppHeader/>
+                        <GroupPage/>
+                        <NavigationBar/>
+                    </PageLayout>
+                </Route>
+                <Route path="/difficulty/:groupId/:familyId/:categoryId">
+                    <PageLayout>
+                        <AppHeader/>
+                        <ListOfDifficultyItemPage onWatchlistDifficultyClick={onWatchlistDifficultyClick} isOnWatchlistDifficulty={isOnWatchlistDifficulty}/>
+                        <NavigationBar/>
+                    </PageLayout>
+                </Route>
+                <Route path="/difficulty/:groupId/:familyId">
+                    <PageLayout>
+                        <AppHeader/>
+                        <CategoryPage/>
+                        <NavigationBar/>
+                    </PageLayout>
+                </Route>
+                <Route path="/difficulty/:groupId">
+                    <PageLayout>
+                        <AppHeader/>
+                        <FamilyPage/>
+                        <NavigationBar/>
+                    </PageLayout>
                 </Route>
             </Switch>
-                <NavigationBar />
-            </PageLayout>
         </Router>
   )
 }
