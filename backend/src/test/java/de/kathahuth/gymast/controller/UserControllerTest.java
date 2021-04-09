@@ -11,6 +11,8 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.*;
 
+import java.util.List;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.arrayContainingInAnyOrder;
 import static org.hamcrest.Matchers.is;
@@ -40,6 +42,7 @@ class UserControllerTest {
         return User.builder()
                 .username("firstUser")
                 .gymnastname("Firstname1 Lastname1")
+                .difficultyList(List.of("difficulty1", "difficulty2"))
                 .build();
     }
 
@@ -47,6 +50,7 @@ class UserControllerTest {
         return User.builder()
                 .username("secondUser")
                 .gymnastname("Firstname2 Lastname2")
+                .difficultyList(List.of("difficulty3", "difficulty4"))
                 .build();
     }
 
