@@ -1,8 +1,8 @@
-export default function WatchlistItem({difficultyItem}) {
+export default function WatchlistItem({difficulty}) {
 
     return (
-        <li>
-            {difficultyItem}
-        </li>
+        <>
+            {difficulty}
+        </>
     )
 }

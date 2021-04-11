@@ -4,7 +4,7 @@ import {getUserByUserName} from "../services/UserDbApiService";
 import styled from "styled-components/macro";
 import Watchlist from "../components/watchlists/Watchlist";
 
-export default function GymnastPage({watchlistDifficulty}){
+export default function GymnastPage(){
 
     const { username } = useParams()
     const [userData, setUserData] = useState()
@@ -27,9 +27,11 @@ export default function GymnastPage({watchlistDifficulty}){
     return (
         <>
             <UserDetailsContainer>
-                <span className="user-name">{userData.gymnastname}</span>
-                <Watchlist watchlistDifficulty={watchlistDifficulty}/>
+                <span className="user-name">{userData.gymnastname}'s list of difficulties</span>
             </UserDetailsContainer>
+            <WatchlistContainer>
+            <Watchlist/>
+            </WatchlistContainer>
         </>
     )
 }
@@ -37,9 +39,14 @@ export default function GymnastPage({watchlistDifficulty}){
 const UserDetailsContainer = styled.section`
 
     background: var(--primary-color);
-    padding: 15px 25px;
+    padding: 30px 25px;
     
     .user-name {
-    color: #00bfff;
+      color: #00bfff;
     }
+`
+
+const WatchlistContainer = styled.section`
+  background: var(--primary-color);
+  padding: 0px 25px;
 `
