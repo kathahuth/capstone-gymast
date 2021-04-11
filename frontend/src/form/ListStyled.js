@@ -6,7 +6,7 @@ const ListStyled = styled.ul`
   overflow-y: scroll;
   padding: 0 25px;
   list-style: none;
-  margin: 0px;
+  margin: 0;
   
   > li {
     border: 1px solid var(--secondary-color);

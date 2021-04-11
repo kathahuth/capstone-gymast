@@ -2,19 +2,20 @@ import styled from "styled-components/macro";
 
 const WatchListStyled = styled.ul`
 
-  overflow-y: scroll;
-  padding: 0px;
+  
+  padding: 0;
   list-style: none;
-  margin: 0px;
+  margin: 0;
   
   > li {
     
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 0 20px 0;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    
+    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
   }
 `
 
