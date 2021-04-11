@@ -39,7 +39,7 @@ export default function GymnastPage(){
 const UserDetailsContainer = styled.section`
 
     background: var(--primary-color);
-    padding: 30px 25px;
+    padding: 20px 25px;
     
     .user-name {
       color: #00bfff;
@@ -48,5 +48,5 @@ const UserDetailsContainer = styled.section`
 
 const WatchlistContainer = styled.section`
   background: var(--primary-color);
-  padding: 0px 25px;
+  padding: 10px 25px;
 `

@@ -13,5 +13,5 @@ export default function Delete() {
 const DeleteIcon = styled(AiOutlineDelete)`
 
   color: #00bfff;
-  transform: scale(1.6);
+  transform: scale(1.5);
 `

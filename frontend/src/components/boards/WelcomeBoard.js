@@ -8,8 +8,8 @@ export default function WelcomeBoard() {
             <img src="/GymastLogoSmall.png" alt="gymast logo" />
             <section>
                 <h4>A Training Notebook</h4>
-                <p>Gymast supports Aerobic Gymnasts and their coaches to keep track on the difficulties that are practiced.</p>
-                <p>All difficulties, that are defined in the Aerobic Gymnastics Code of Points, can be found in the difficulty table and saved to a personal list.</p>
+                <p>Gymast supports aerobic gymnasts and their coaches to keep track on the difficulties that are being practiced.</p>
+                <p>All difficulties, that are defined in the Aerobic Code of Points, can be found in the difficulty table and saved to a list.</p>
             </section>
             <GetStartedButton/>
         </Container>
@@ -26,7 +26,7 @@ const Container = styled.div`
     opacity: 0.85;
     padding: 20px;
     position: absolute;
-    bottom: 300px;
+    bottom: 245px;
     margin: 15px;
     line-height: 1.5;
     justify-items: end;
