@@ -22,6 +22,7 @@ class UserServiceTest {
         return User.builder()
                 .username("firstUser")
                 .gymnastname("Firstname1 Lastname1")
+                .difficultyList(List.of("difficulty1, difficulty2"))
                 .build();
     }
 
@@ -29,6 +30,7 @@ class UserServiceTest {
         return User.builder()
                 .username("secondUser")
                 .gymnastname("Firstname2 Lastname2")
+                .difficultyList(List.of("difficulty3, difficulty4"))
                 .build();
     }
 

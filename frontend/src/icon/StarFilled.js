@@ -13,6 +13,6 @@ export default function StarFilled() {
 
 const Star = styled(AiFillStar)`
 
-  color: #00bfff;
+  color: #ff38ff;
   transform: scale(2.3);
 `

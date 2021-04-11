@@ -6,7 +6,7 @@ export default function PageNameDifficultyItem() {
     return (
         <PageNameWrapper>
             <BackButton/>
-            <h4>Add a difficulty to your watchlist</h4>
+            <h4>Add a difficulty to your list</h4>
         </PageNameWrapper>
     )
 }
